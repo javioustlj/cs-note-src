@@ -18,7 +18,7 @@ int func3()
     return 0;
 }
 
-struct A  
+struct A
 {};
 
 struct B
@@ -140,7 +140,7 @@ void func4()
     cout << "sizeof(G): " << sizeof(G) << endl; // 8  (内存共用)
 
     cout << "sizeof(H): " << sizeof(H) << endl; // 1   (编译器实现)
-    cout << "sizeof(I): " << sizeof(I) << endl; // 4   
+    cout << "sizeof(I): " << sizeof(I) << endl; // 4
     cout << "sizeof(J): " << sizeof(J) << endl; // 8   (虚指针)
     cout << "sizeof(K): " << sizeof(K) << endl; // 4
     cout << "sizeof(L): " << sizeof(L) << endl; // 16  (虚指针)  对比一下sizeof(M)

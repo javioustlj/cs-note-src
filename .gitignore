@@ -1,0 +1,14 @@
+.vscode
+.idea
+.vs
+
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+
+
+*.log
+*.tmp
+*.bak

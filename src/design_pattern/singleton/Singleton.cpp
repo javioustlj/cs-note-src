@@ -3,17 +3,16 @@
 #include <iostream>
 #include "Singleton.hpp"
 
-Singleton* Singleton::instance{nullptr};
+std::shared_ptr<Singleton> Singleton::_instance;
 std::mutex Singleton::_mutex;
 
-Singleton& Singleton::getInstance(int value)
+std::shared_ptr<Singleton> Singleton::getInstance(int value)
 {
     std::lock_guard<std::mutex> lock(_mutex);
-    if (!instance)
-    {
-        instance = new Singleton(value);
+    if (!_instance) {
+        _instance = std::shared_ptr<Singleton>(new Singleton(value));
     }
-    return *instance;
+    return _instance->shared_from_this();
 }
 
 int Singleton::getValue() const
@@ -24,6 +23,7 @@ int Singleton::getValue() const
 Singleton::Singleton(int value)
     : _value (value)
 {
+    std::cout << "Singleton::Singleton()" << std::endl;
 }
 
 Singleton::~Singleton()

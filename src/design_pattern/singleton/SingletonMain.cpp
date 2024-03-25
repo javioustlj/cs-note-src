@@ -5,15 +5,15 @@
 void Thread1(){
     // Following code emulates slow initialization.
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    const Singleton& singleton = Singleton::getInstance(1);
-    std::cout << singleton.getValue() << "\n";
+    std::shared_ptr<Singleton> singleton = Singleton::getInstance(1);
+    std::cout << singleton->getValue() << "\n";
 }
 
 void Thread2(){
     // Following code emulates slow initialization.
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    const Singleton& singleton = Singleton::getInstance(2);
-    std::cout << singleton.getValue() << "\n";
+    std::shared_ptr<Singleton> singleton = Singleton::getInstance(2);
+    std::cout << singleton->getValue() << "\n";
 }
 
 int main()

@@ -1,23 +1,22 @@
 // Copyright (c) 2024 Javioustlj. All rights reserved.
-#ifndef SINGLETON_HPP
-#define SINGLETON_HPP
+
+#pragma once
 
 #include <mutex>
+#include <memory>
 
-class Singleton
+class Singleton : public std::enable_shared_from_this<Singleton>
 {
 public:
     Singleton(Singleton &other) = delete;
     void operator=(const Singleton &) = delete;
-    static Singleton& getInstance(int);
+    ~Singleton();
+    static std::shared_ptr<Singleton> getInstance(int);
     int getValue() const;
 
 private:
     Singleton(int value);
-    ~Singleton();
     int _value;
-    static Singleton* instance;
+    static std::shared_ptr<Singleton> _instance;
     static std::mutex _mutex;
 };
-
-#endif

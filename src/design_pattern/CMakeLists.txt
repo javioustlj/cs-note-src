@@ -4,5 +4,6 @@ project(computer-science-interview-design_pattern
 
 
 add_subdirectory(singleton)
+add_subdirectory(observer)
 
 # install(TARGETS sizeof RUNTIME DESTINATION bin)

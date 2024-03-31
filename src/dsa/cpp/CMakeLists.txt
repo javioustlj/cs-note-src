@@ -5,3 +5,4 @@ project(computer-science-interview-dsa-cpp
 
 add_executable(TestVector vector/TestVector.cpp)
 add_executable(TestList list/TestList.cpp)
+add_executable(TestBinTree binTree/TestBinTree.cpp)

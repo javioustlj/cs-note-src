@@ -5,5 +5,10 @@ project(computer-science-interview-cpp
 
 add_executable(sizeof sizeof.cpp)
 add_executable(unsigned unsigned.cpp)
-add_executable(abrt_debug debug/unwind.cpp)
-add_executable(unwind unwinding.cpp)
+add_executable(pointer pointer.cpp)
+add_executable(polymorphism polymorphism.cpp)
+
+if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
+        add_executable(abrt_debug debug/unwind.cpp)
+        add_executable(unwind unwinding.cpp)
+endif()

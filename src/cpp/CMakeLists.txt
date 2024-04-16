@@ -9,6 +9,7 @@ add_executable(pointer pointer.cpp)
 add_executable(polymorphism polymorphism.cpp)
 add_executable(lambda lambda.cpp)
 add_executable(smart_pointer smart_pointer.cpp)
+add_executable(static static/a.cpp static/static.cpp)
 
 if (CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
         add_executable(abrt_debug debug/unwind.cpp)

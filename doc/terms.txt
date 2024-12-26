@@ -1,0 +1,2 @@
+bare metal servers
+a virtualized (full passthrough, Shared NVSwitch, or vGPU) multi-tenant environment

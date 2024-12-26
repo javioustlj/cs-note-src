@@ -1,0 +1,8 @@
+Abbr	" English"	" Chinese"	" Introduction"
+NCCL	NVIDIA Collective Communication Library		NCCL是一个集合通信库，用于GPU集群和多节点通信，针对英伟达GP和多网络通信做了很多优化，实现高带宽低延迟的通信。
+PCIe			
+NVLink			
+NVIDIA Mellanox Network			
+MPI	Message Passing Interface		
+CUDA			
+DCGM			

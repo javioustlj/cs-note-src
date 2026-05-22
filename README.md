@@ -1,23 +1,26 @@
-# cs-interview
-A repository for preparing computer science interview
+# cs-note-src
 
+A repository for organizing computer science learning notes and source code.
 
-### How to use
+## Directory layout
 
-1. download
-```shell
-$ git clone https://github.com/kevinzou/cs-interview
-$ cd cs-interview
-```
-2. build
-```shell
-$ mkdir build
-$ cd build
-$ cmake ..
-$ cmake --build .
-```
-3. run
+- `docs/`: notes, terms, abbreviations, and learning summaries.
+- `examples/`: small language or tool experiments, such as C++ and Python snippets.
+- `topics/`: computer science topics, such as algorithms, data structures, network, and design patterns.
+- `problems/`: coding practice and interview problems.
+- `scripts/`: helper scripts.
+
+## Build C/C++ examples
 
 ```shell
-$ ./build/bin <file>
+cmake -S . -B build
+cmake --build build
 ```
+
+Generated executables are written to:
+
+```shell
+build/bin/
+```
+
+Python files under `examples/python/` are regular scripts and are not managed by CMake.

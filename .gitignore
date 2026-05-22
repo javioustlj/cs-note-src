@@ -1,15 +1,23 @@
-/build
-/bin
+build/
+bin/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
 
 .vscode
 .idea
 .vs
 
+*.out
 *.obj
 *.o
 *.exe
 *.dll
 *.pdb
+*.so
+*.dylib
+*.a
 
 
 *.log

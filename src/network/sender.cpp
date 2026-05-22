@@ -12,6 +12,7 @@
 #define BROADCAST_MAC "\xff\xff\xff\xff\xff\xff"
 #define DEST_MAC "\x10\x70\xfd\x12\x7d\x86"
 #define CUSTOM_PROTOCOL_TYPE 0xABCD
+#define IF_NAME "ens160"
 
 void sendRawBroadcast() {
 
@@ -23,7 +24,7 @@ void sendRawBroadcast() {
 
     struct ifreq ifr;
     memset(&ifr, 0, sizeof(ifr));
-    strncpy(ifr.ifr_name, "enp1s0", IFNAMSIZ - 1);
+    strncpy(ifr.ifr_name, IF_NAME, IFNAMSIZ - 1);
     if (ioctl(sockfd, SIOCGIFINDEX, &ifr) < 0) {
         perror("ioctl SIOCGIFINDEX failed");
         close(sockfd);
@@ -32,7 +33,7 @@ void sendRawBroadcast() {
 
     struct ifreq if_mac;
     std::memset(&if_mac, 0, sizeof(if_mac));
-    std::strncpy(if_mac.ifr_name, "enp1s0", IFNAMSIZ - 1); // 请替换为你的硬件端口名
+    std::strncpy(if_mac.ifr_name, IF_NAME, IFNAMSIZ - 1); // 请替换为你的硬件端口名
     if (ioctl(sockfd, SIOCGIFHWADDR, &if_mac) < 0) {
         std::cerr << "Error getting MAC address." << std::endl;
         close(sockfd);
